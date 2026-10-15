@@ -6,12 +6,12 @@ $(document).ready(function() {
     function applyThemeOnPage(){
       const theme = $.cookie(themeCookie);
 
-      if (theme === 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      /*if (theme === 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         setTimeout(() => {
           $('body').addClass("indigo-dark-theme");
           $("#toggle-switch-input").prop("checked", true);
         }, 200)
-      }
+      }*/
       {% if INDIGO_ENABLE_DARK_TOGGLE %}
       $('body').toggleClass("indigo-dark-theme", theme === 'dark');       // append or remove dark-class based on cookie-value
       // update expiry
